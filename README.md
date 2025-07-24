@@ -18,11 +18,16 @@ Un assistant intelligent de type chatbot, conçu avec **FastAPI**, **GPT-4**, et
 ## 🚀 Démo en ligne
 
 Tu peux exécuter le projet en local en suivant les étapes ci-dessous.
+- git clone https://github.com/RamaAbdoulaye/ai-food-agent-app.git
+- cd ai-food-agent-app
+- 
+
+
 
 ---
 
 ## 🧠 Exemples de requêtes utilisateur
-- Quels plats contiennent du poulet ?
+- Quels plats contiennent du poulet ?+
 - Avez-vous des options végétariennes ?
 - Quels sont vos plats les plus populaires ?
 - Y a-t-il des plats sans gluten ?

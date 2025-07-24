@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-    <title>AI Food Assistant</title>
+    <title>Assistant IA de Livraison de Nourriture</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
-    <h1>Welcome to the AI Food Assistant</h1>
+    <div class="container">
+        <h1>Bienvenue sur l'Agent Alimentaire IA</h1>
 
-    <form id="chat-form">
-        <input type="text" name="prompt" id="prompt" placeholder="Ask something about our food..." required>
-        <button type="submit">Ask</button>
-    </form>
+        <form id="chat-form" autocomplete="off">
+            <input type="text" name="prompt" id="prompt" placeholder="Posez une question sur notre nourriture..."
+                required>
+            <button type="submit">Demander</button>
+        </form>
 
-    <div id="suggestions">
-        <h3>Try one of these:</h3>
-        <ul>
-            {% for p in prompts %}
-            <li><button class="suggestion">{{ p }}</button></li>
-            {% endfor %}
-        </ul>
+        <div id="response"></div>
+
+        <div id="suggestions">
+            <h3>Essayez l'une de ces suggestions :</h3>
+            <ul>
+                {% for p in prompts %}
+                <li><button class="suggestion">{{ p }}</button></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-
-    <div id="response"></div>
 
     <script>
         document.querySelectorAll('.suggestion').forEach(btn => {
@@ -36,13 +39,14 @@
             e.preventDefault();
             const formData = new FormData(e.target);
             const responseDiv = document.getElementById('response');
-            responseDiv.innerHTML = 'Loading...';
+            responseDiv.innerHTML = 'Chargement...';
             const res = await fetch('/ask', {
                 method: 'POST',
                 body: formData
             });
             const data = await res.json();
-            responseDiv.innerHTML = `<p><strong>Answer:</strong> ${data.answer}</p>`;
+            responseDiv.innerHTML = `<p><strong>Réponse :</strong> ${data.answer}</p>`;
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         });
     </script>
 </body>
