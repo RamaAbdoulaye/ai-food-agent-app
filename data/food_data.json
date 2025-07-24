@@ -1,0 +1,44 @@
+{
+    "plats": [
+        {
+            "nom": "Salade de poulet grillé",
+            "type": "Salade",
+            "regime": [
+                "sans gluten"
+            ],
+            "ingredients": [
+                "poulet",
+                "laitue",
+                "tomate",
+                "concombre"
+            ],
+            "popularite": 9.1
+        },
+        {
+            "nom": "Pizza végétarienne",
+            "type": "Pizza",
+            "regime": [
+                "végétarien"
+            ],
+            "ingredients": [
+                "fromage",
+                "poivron",
+                "oignon",
+                "champignon"
+            ],
+            "popularite": 8.4
+        },
+        {
+            "nom": "Burrito au bœuf",
+            "type": "Mexicain",
+            "regime": [],
+            "ingredients": [
+                "bœuf",
+                "riz",
+                "haricots",
+                "fromage"
+            ],
+            "popularite": 8.9
+        }
+    ]
+}

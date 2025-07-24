@@ -23,11 +23,12 @@ def load_food_data():
 @app.get("/", response_class=HTMLResponse)
 async def get_home(request: Request):
     common_prompts = [
-        "What dishes contain chicken?",
-        "Do you have vegetarian options?",
-        "What are the most popular dishes?",
-        "Is there anything gluten-free?"
+        "Quels plats contiennent du poulet ?",
+        "Avez-vous des options végétariennes ?",
+        "Quels sont les plats les plus populaires ?",
+        "Y a-t-il des plats sans gluten ?"
     ]
+
     return templates.TemplateResponse("index.html", {"request": request, "prompts": common_prompts})
 
 # Endpoint: Handle user query and return AI response
