@@ -2,11 +2,49 @@
 <html>
 
 <head>
-    <title>Hello</title>
+    <title>AI Food Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
-    <h1>Hello {{ name }}!</h1>
+    <h1>Welcome to the AI Food Assistant</h1>
+
+    <form id="chat-form">
+        <input type="text" name="prompt" id="prompt" placeholder="Ask something about our food..." required>
+        <button type="submit">Ask</button>
+    </form>
+
+    <div id="suggestions">
+        <h3>Try one of these:</h3>
+        <ul>
+            {% for p in prompts %}
+            <li><button class="suggestion">{{ p }}</button></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="response"></div>
+
+    <script>
+        document.querySelectorAll('.suggestion').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.getElementById('prompt').value = btn.textContent;
+            });
+        });
+
+        document.getElementById('chat-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const responseDiv = document.getElementById('response');
+            responseDiv.innerHTML = 'Loading...';
+            const res = await fetch('/ask', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await res.json();
+            responseDiv.innerHTML = `<p><strong>Answer:</strong> ${data.answer}</p>`;
+        });
+    </script>
 </body>
 
 </html>
