@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+from fastapi.staticfiles import StaticFiles
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
@@ -28,7 +29,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 def load_food_data():
     with open("data/food_data.json", encoding="utf-8") as f:
-        return json.load(f)
+        return json.load(f)["plats"]
 
 
 prompts_suggeres = [
@@ -39,9 +40,15 @@ prompts_suggeres = [
 ]
 
 
-@app.get("/", response_class=HTMLResponse)
-async def get_home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request, "prompts": prompts_suggeres})
+@app.get("/")
+async def home(request: Request):
+    plats = load_food_data()
+    return templates.TemplateResponse("index.html", {
+        "request": request,
+        "plats": plats,
+        "message": "",
+        "prompts": prompts_suggeres
+    })
 
 
 @app.post("/ask")

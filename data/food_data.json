@@ -3,6 +3,7 @@
         {
             "nom": "Salade de poulet grillé",
             "type": "Salade",
+            "prix": "8 dollars",
             "regime": [
                 "sans gluten"
             ],
@@ -12,11 +13,13 @@
                 "tomate",
                 "concombre"
             ],
-            "popularite": 9.1
+            "popularite": 9.1,
+            "image": "Image/Poulet_roti.jpg"
         },
         {
             "nom": "Pizza végétarienne",
             "type": "Pizza",
+            "prix": "11 dollars",
             "regime": [
                 "végétarien"
             ],
@@ -26,11 +29,13 @@
                 "oignon",
                 "champignon"
             ],
-            "popularite": 8.4
+            "popularite": 8.4,
+            "image": "Image/Pizza.jpg"
         },
         {
             "nom": "Burrito au bœuf",
             "type": "Mexicain",
+            "prix": "20 dollars",
             "regime": [],
             "ingredients": [
                 "bœuf",
@@ -38,7 +43,67 @@
                 "haricots",
                 "fromage"
             ],
-            "popularite": 8.9
+            "popularite": 8.9,
+            "image": "Image/Borito.jpg"
+        },
+        {
+            "nom": "Poulet rôti",
+            "description": "Poulet entier rôti aux herbes de Provence",
+            "categorie": "Viande",
+            "prix": 15.99,
+            "gluten": false,
+            "vegetarien": false,
+            "ingredients": [
+                "Poulet entier",
+                "Herbes de Provence",
+                "Ail",
+                "Huile d'olive",
+                "Sel",
+                "Poivre"
+            ],
+            "image": "Image/Poulet_roti.jpg"
+        },
+        {
+            "nom": "Lasagnes végétariennes",
+            "description": "Lasagnes aux légumes grillés et fromage ricotta",
+            "categorie": "Végétarien",
+            "prix": 12.5,
+            "gluten": true,
+            "vegetarien": true,
+            "ingredients": [
+                "Pâtes à lasagnes",
+                "Courgettes",
+                "Aubergines",
+                "Poivrons",
+                "Fromage ricotta",
+                "Tomates concassées",
+                "Basilic",
+                "Huile d'olive",
+                "Sel",
+                "Poivre"
+            ],
+            "image": "Image/Lasane.jpg"
+        },
+        {
+            "nom": "Salade sans gluten",
+            "description": "Salade de quinoa et légumes croquants",
+            "categorie": "Salade",
+            "prix": 10.0,
+            "gluten": false,
+            "vegetarien": true,
+            "ingredients": [
+                "Quinoa",
+                "Concombre",
+                "Tomates cerises",
+                "Carottes râpées",
+                "Poivrons",
+                "Jus de citron",
+                "Persil",
+                "Huile d'olive",
+                "Sel",
+                "Poivre"
+            ],
+            "image": "Image/sans_glutin.jpg"
         }
     ]
 }
